@@ -184,6 +184,13 @@ h3{
   text-align: center;
 }
 
+h6{
+  font-family: "Roboto", sans-serif;
+  margin-top: 10px;
+  font-size: 30px; 
+  margin-bottom: 20px;
+  text-align: center;
+}
 
 
 .columnfooter{
