@@ -1,0 +1,61 @@
+.text-primary {
+  color: rgb(215, 8, 8);
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  background: #000;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: rgb(215, 8, 8);
+}
+
+.btn-primary,
+.bg-primary {
+  background-color: rgb(215, 8, 8);
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn-secondary,
+.bg-secondary {
+  background-color: #21a933;
+  color: #fff;
+}
+
+.btn-light,
+.bg-light {
+  background-color: #762424;
+  color: #fff;
+}
+
+.btn-dark,
+.bg-dark {
+  background-color: #333;
+  color: salmon;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #fff;
+}
+
+.section-padding {
+  padding: 20px 20px 40px;
+}
+
+.flex-grid .img {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 8px;
+}
