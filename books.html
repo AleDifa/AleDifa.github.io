@@ -35,7 +35,7 @@
             <div id="Projects" class=" grid-container">  
 
                 <div class="grid-item">
-                   <img src="img/work_in_progress.jpg" alt="" />  
+                   <img src="img/book1.jpeg" alt="" />  
                     <p style="color:#000000";>
                 </div>
                               
@@ -44,14 +44,18 @@
                     <p style="color:#000000";>
                 </div>
 
-                <div class="grid-item">
-                  <video loop autoplay 
+                <div class="grid-item" id= vid>
+                  <video loop autoplay muted
                        src="video/stat.mp4" 
                        width=450  
                        height=450
                        controls poster="immaginedianteprima.jpg" >
                        Sorry, your browser doesn't support embedded videos.
                   </video>
+                  <script>
+                    document.getElementById('vid').play();
+                  </script>
+                
                 </div> 
                 
             </div>   
