@@ -1,135 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/elements.css" /> 
-</head>
+  </head>
 
-<body> 
+  <body> 
     <A href="books.html"></A>
-        <div><h2>This section contains the books I have read in the professional field and the certifications obtained </h2></div>       
-            <div class="list_of_books">
-                <ul>
-                    <li>Inferenza Statistica 2017, Bruno Chiandotto, Dipartimento Statistica, informatica, Applicazioni "G Parenti" (DISIA), Firenze</li>
-                    <li>Reti di calcolatori. 5° ediz, Tanenbaum,  Wetherall</li>
-                    <li>Sistemi operativi. Concetti ed esempi, Silberschatz, Baer Galvin, Gagne</li>
-                    <li>Machine Learning e Intelligenza Artificiale. Metodologie per lo sviluppo di sistemi automatici, Gianfranco Barone</li>
-                    <li>Data science con python. Dai fondamenti al machine learning,  Joel Grus</li>
-                    <li>Numsense! Data Science for the Layman, Annalyn Ng, Kenneth Soo </li>
-                  </ul>
+        <div>
+            <h2>This section contains some books I have read, some projects and the professional certifications obtained </h2></div>       
+              <div style='margin:15px; padding:10px;'>
+                <ul>      
+                  <div class="inner">  <li><a href="#">Tutta la Matematica. Scorletti e Trioni                         <span><img src="img/book_math.png" alt="" /></span></a></li> </div>
+                  <div class="inner">  <li><a href="#">Reti di calcolatori. 5° ediz, Tanenbaum, Wetherall              <span><img src="img/book_reti_calcolatori.png" alt="" /></span></a></li> </div>
+                  <div class="inner">  <li><a href="#">Sistemi operativi. Silberschatz, Baer Galvin, Gagne             <span><img src="img/book_sistemi_operativi.png" alt="" /></span></a></li> </div>
+                  <div class="inner">  <li><a href="#">Machine Learning e Intelligenza Artificiale. Gianfranco Barone  <span><img src="img/book_intell_artificiale.jpeg" alt="" /></span></a></li> </div>
+                  <div class="inner">  <li><a href="#">Numsense! Data Science for the Layman. Annalyn Ng, Kenneth Soo  <span><img src="img/book_ds_layman.jpeg" alt="" /></span></a></li> </div>
+                  <div class="inner">  <li><a href="#">Data science con python. Joel Grus                              <span><img src="img/book_datascience.jpeg" alt="" /></span></a></li> </div>
+                  <div class="inner">  <li><a href="#">La Mucca Viola. Seth Godin                                      <span></span></a></li> </div>
+                  <div class="inner">  <li><a href="#">Codice Montemagno. Marco Montemagno                             <span></span></a></li> </div>           
+                </ul>
 
+                <pre class="tab">
+                <!-- create space-->
+                </pre>
+
+                <dl>
+                  <dt>Certifications:</dt>
+                  <dd><a href="https://www.udemy.com/certificate/UC-11OUO5PF/" target="_blank">- Data Analyst Pandas Python</a></dd>
+                  <dd><a href="https://www.udemy.com/certificate/UC-LGPFUN84/" target="_blank">- Linux Essential</a></dd>
+                </dl>
+            </div>
+            
+            
+            <!-- RED LINE -->
+            <hr size="8" width="80%" color="red"> 
+            <div><h2>Maps and various projects </h2></div> 
+            <div style='margin:15px; padding:10px;'>
+              <dl>
+                <dt>Maps:</dt>
+                <dd><a href="https://www.google.com/maps/d/edit?mid=18dCjG7UgZIoHjEA-RZ547jKjpjziYtw&usp=sharing" target="_blank">- Situation of Coliving house and villa in Italy</a></dd>
+                <dd><a href="https://www.google.com/maps/d/edit?mid=19sbv-PMTO68eB_Wu9L2Jdlw34B8nDC4&usp=sharing" target="_blank">- Castels and hamlet in Italy</a></dd>
+                
                   <pre class="tab">
-                      <!-- create space-->
+                  <!-- create space-->
                   </pre>
 
-                    <dl>
-                      <dt>Certifications:</dt>
-                      <dd><a href="https://www.udemy.com/certificate/UC-11OUO5PF/" target="_blank">- Data Analyst Pandas Python</a></dd>
-                      <dd><a href="https://www.udemy.com/certificate/UC-LGPFUN84/" target="_blank">- Linux Essential</a></dd>
-                    </dl>
+                <dt>Various:</dt>
+                <dd><a href="https://drive.google.com/file/d/1GiSTazZ3SMtQZ0sUKEP36i1C-05MPDQT/view?usp=sharing" target="_blank">- Marketing slide free, 360° managment of marketing campaign</a></dd>
+                <dd><a href="https://public.tableau.com/profile/ale3838#!/" target="_blank">- Tableau, some Graph and Dashboard</a></dd>
+              </dl>     
             </div>
-            <hr size="8" width="80%" color="red">  
-
-            <div id="Projects" class=" grid-container">  
-
-                <div class="grid-item">
-                   <img src="img/book1.jpeg" alt="" />  
-                    <p style="color:#000000";>
-                </div>
-
-                <div class="grid-item" id= vid>
-                  <video loop autoplay muted
-                       src="video/stat.mp4" 
-                       width=450  
-                       height=450
-                       controls poster="immaginedianteprima.jpg" >
-                       Sorry, your browser doesn't support embedded videos.
-                  </video>
-                    <script> 
-                      document.getElementById('vid').play();
-                    </script>
-                 <!-- muted, messso perche alcuni browser sembra che senza non facciamo partiter il video, 
-                anche documet-getelementbyid(vid) messo per stesso motivo -->
-                </div> 
-
-                <div class="grid-item"> 
-                  <img src="img/book2.png" alt="" />  
-                    <p style="color:#000000";>
-                </div>--> 
-                
-            </div>   
 
             <div class="backtoindex">
                 <a style="text-decoration: none;" href="index.html"  class="btn">take me home  <i class="fas fa-home"></i></a>
             </div>
-
-<style>
-    * {
-      text-decoration: none;
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .list_of_books{
-padding: 60px;
-    } 
-
-    
-
-    h2{text-align: center;
-        padding: 15px;}
-
-    * .content{
-      box-sizing: border-box;
-    }
-    
-    p {
-      margin: 10px 0;
-    } 
-    
-    body {
-      font-family: "Roboto", sans-serif;
-      background-color: rgb(223, 223, 223);
-      color: #000;
-      line-height: 1.5;
-        
-    }
-    h3 {
-        font-family: "Roboto", sans-serif;
-        margin-top: 10px;
-        font-size: 40px;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    .grid-container {
-        padding-top: 20px;
-        display: grid;
-        width: 100%;
-        max-width: 96%;
-        margin: 0 auto;
-        grid-template-columns:  repeat(3, 2fr);
-        grid-gap: 11px;
-        grid-auto-flow: row;
-        
-      }
-    
-    img {
-        width: 100%;
-    }
-    
-    .backtoindex{
-      text-align: center;
-      padding: 10px;
-      margin-top: 50px;
-    }
-    
-    
-    @media (max-width: 600px) {
-      .grid-container{ grid-template-columns: repeat(1, 1fr); }
-    }
-    </style>
-</body>
+  </body>
 </html>
