@@ -1,3 +1,11 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(239, 223, 223);           
+  color: #000;                                  /* color of <p> and text */
+  line-height: 1.5;                               /* space of interlinea */
+}     
+
+
 .text-primary {
   color: rgb(215, 8, 8);
 }
@@ -59,3 +67,32 @@
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 8px;
 }
+
+/* hoverlap an image */ 
+
+img {
+  height: auto;
+  width: 100px;
+  display: none
+}
+
+.inner:hover img {
+  display: block;
+}
+
+
+/*  footer */
+.backtoindex{
+  text-align: center;
+  padding: 10px;
+  margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
