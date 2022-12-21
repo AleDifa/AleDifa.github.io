@@ -1,147 +1,103 @@
 <!DOCTYPE html>
+
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/elements.css" />
-    <link rel="stylesheet" href="css/style.css" />
+       <head>
+         <meta charset="UTF-8" />
+         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+         <link rel="stylesheet" href="css/style.css" />
+       
+         <!-- for show image of website in Linkedin Featured section-->
+         <meta name="description" content="Portfolio Website" />
+         <meta name="title" property="og:title" content="Portfolio Website" />
+         <meta property="og:type" content="Website" />
+         <meta name="image" property="og:image" content ="https://live.staticflickr.com/65535/51838066434_4fbb6fe550_k.jpg"     />
+         <meta name="description" property="og:description" content="Website"/>
+         <meta name="author" content="Ale Di Fabio" />
+       
+         <!-- HEADER -->  
+         <title>Alessandro Di Fabio</title>
+       </head>
+  <body id="home">
+    <div class="box">
+      <div id="navbar" class="navbar">
+        <h1 class="logo">
+          <a href="index.html">
+          <span class="text-primary"></i> Alessandro </a>
+          </span>Di Fabio
+        </h1>
+        <nav>
+          <ul>
+            <li><a href="#Projects">Projects</a></li>
+            <li><a href="#About-me">About me</a></li>
+            <li><a href="#Contact">Contact</a></li>
+            <li><a href="books.html">Books & Links</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- CV -->
+      <div id="relative3" class="relative3"><a href="https://docs.google.com/document/d/1fCEIAwxaMamCI1igqjbiWp9BBTF-IhpFqMxzgL9AJXI/edit" target="_blank">scarica qui il mio Cv</a></div>     
+    </div>
 
 
+    <div><h3>Projects</h3></div>
+    <div id="Projects" class="flex-container">
+      <div class="flex-item">  <a href="https://github.com/AleDifa/Twitter-Sentiment-Analysis/blob/main/1)%20Tweeter%20API%20Sentiment.ipynb" target="blank"><img src="img/Twitter_analysis.png" alt="alt text" />  
+      <p style="color:#000000";> <b> Sentiment Analysis- API Twitter </b> this project shows a small part of possibility analysis of Twitter Sentiment. with the input function you can enter any word and the number of tweets you want to analyze</p></a></div>
 
-    <!-- for image in Linkedin -->
+      <div class="flex-item">  <a href="https://github.com/AleDifa/Speech-Recognition-sbobinatura-automatica-/blob/main/Speech%20Recognition%20(sbobinatura%20automatica).ipynb" target="blank"><img src="img/speech_recognition.jpg" alt="" />  
+      <p style="color:#000000";> <b> Speech Recognition </b> this simple script can convert audio to text with Google API, in this example in the last row of project you can see the speech of Mattarella in text from an audio source </p>  </a>  </div>
 
-    <meta name="description" content="Portfolio Website" />
-    <meta name="title" property="og:title" content="Portfolio Website" />
-    <meta property="og:type" content="Website" />
+     <!--    <div class="flex-item">  <a href="books.html" target="blank"><img src="img/mondo.png" alt="" />  
+      <p style="color:#000000";> <b> passione mappette e altre iniziative</b> </p>  </a>  </div>      -->
+    </div>
+      <br> 
+      <br> 
+      <br>
 
-    <meta name="image" 
-      property="og:image"
-      content ="https://live.staticflickr.com/65535/51838066434_4fbb6fe550_k.jpg"     />
-    
-      <meta name="description" 
-      property="og:description" 
-      content="Website"/>
-    <meta name="author" content="Ale Di Fabio" />
-
-
-      <!-- HEADER -->
-          
-        <title>Alessandro Di Fabio</title>
-        </head>
-        <body id="home">
-          <div class="box">
-            <div id="navbar" class="navbar top">
-              <h1 class="logo">
-                <a href="index.html">
-                <span class="text-primary"></i> Alessandro </a>
-                  </span>Di Fabio</h1>
-              <nav>
-                <ul>
-                  <li><a href="#Projects">Projects</a></li>
-                  <li><a href="#About-me">About me</a></li>
-                  <li><a href="#Contact">Contact</a></li>
-                  <li><a href="books.html">Books Read</a></li>
-
-                </ul>
-              </nav>
-            </div>
-
-
-      
-            <!-- CV -->
-            <div id="relative3" class="relative3"> scarica qui il mio <a href="https://www.linkedin.com/in/alessandro-di-fabio/overlay/1635485476836/single-media-viewer/" target="_blank" class="btn">Cv</a></div>
-
-     
-            <!-- PROJECTS-->
-            </div>
-
-              <div><h3>Projects</h3></div>
-              <div id="Projects" class="grid-container">
-
-            <div class="grid-item">  <a href="https://github.com/AleDifa/Twitter-Sentiment-Analysis/blob/main/1)%20Tweeter%20API%20Sentiment.ipynb" target="blank"><img src="img/Twitter_analysis.png" alt="" />  
-              <p style="color:#000000";> <b> Sentiment Analysis- API Twitter </b> this project shows a small part of possibility analysis of Twitter Sentiment. with the input function you can enter any word and the number of tweets you want to analyze</p>  </a>   </div>
-                        
-            <div class="grid-item">  <a href="https://github.com/AleDifa/Speech-Recognition-sbobinatura-automatica-/blob/main/Speech%20Recognition%20(sbobinatura%20automatica).ipynb" target="blank"><img src="img/speech_recognition.jpg" alt="" />  
-              <p style="color:#000000";> <b> Speech Recognition </b> this simple script can convert audio to text with Google API, in this example in the last row of project you can see the speech of Mattarella in text from an audio source </p>  </a>  </div>
-                
-            <div class="grid-item">  <a href="https://github.com/AleDifa/Machine_Learning_Predict_Category_Message" target="blank"><img src="img/spammessage.png" alt="" />  
-              <p style="color:#000000";> <b> Machine Learning Project: Predictive Analysis,</b> This script can understand if some texts, words are spam or normal text (message) with Naive Bayes Algorithm</p>  </a>  </div>
-            
-                 
-          </div>
-          <pre class="tab">
-              <!-- create space-->
-
-
-
-
-
-            
-
-          </pre>
-     <!--     <section id="other-project" class="Contact flex-columns" >
-            <header class="section-header" >
-             <h6><a href="others-projects.html" target="_blank" class="btn">Other Projects</a></div></h6>
-            </header>
-          </section>                -->
-          
-          <!-- HOW I'M-->
-
-          <main> 
-            <section id="About-me" class="Aboutme flex-columns flex-reverse">
-              <div class="column">
-                <div class="column-1">
-                  <img src="/img/profile1.png" alt="" />
-                    </div>
-               
-                    <div class="column-2 bg-secondary">
-                      <h2>About me</h2>   
-                      <p>
-                          Ritengo di essere una persona ottimista, che si pone sempre nuovi obiettivi da raggiungere. 
-                          Negli anni la mia curiosità e i miei interessi mi hanno portato dapprima ad approcciarmi al mondo del marketing, per poi passare ad una parte piu analitica con excel. <br> 
-                          Da qui ho quindi proseguito la mia strada formativa e, nel 2018, ho iniziato a studiare da autodidatta informatica e statistica applicata ai dati. 
-                          Nel 2019 ho avuto l'occasione di partecipare ad un corso formativo presso la Seac Cefor, in aula, a Trento in analisi dati e Machine learning, 
-                          dandomi l'opportunità di lavorare in Irlanda per un breve periodo.
-                          Da quel giorno ad oggi miglioro le mie skills con corsi e video, che mi hanno portato ad occuparmi di Business Intelligence, Machine Learning e Data Integration. <br>
-                      </p>
-                      <pre class="tab">
-                        
-                      </pre>
-                      <a href="books.html" target="blank" class="btn btn-outline">Books and Certifications</a>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-<!-- FOOTER -->
-      <section id="Contact" class="Contact flex-columns" >
-       <header class="section-header" >
-         <h3>Contact</h3>
-          <div class="columnfooter">
-            <div class="icon-bar">
-              <a href="https://github.com/AleDifa" style="padding-left:25px;" class="Github" ><i class="fab fa-github fa-3x" style="color:rgb(0, 0, 0)"></i></a>
-              <a href="https://www.instagram.com/alessandro_difa/" style="padding-left:25px;" class="Instagram" ><i class="fab fa-instagram fa-3x" style="color:rgb(221, 42, 123)"></i></a>
-              <a href="https://www.linkedin.com/in/alessandro-di-fabio/" style="padding-left:25px;" class="linkedin"  ><i class="fab fa-linkedin fa-3x" style="color:rgb(0, 119, 171)"></i></a>    
-              <a href="https://alessandro-difa.medium.com/" style="padding-left:25px;" class="Medium"  ><i class="fab fa-medium fa-3x" style="color:rgb(0, 0, 0)"></i></a>    
-
-              
-              <div class=lafine  style='margin-top:15px;'>          
-                Written by Alessandro Di Fabio <br>
-                with <i class="fas fa-heart"> </i> and  Html/Css <br>
-                <div>
-                  <a style="color:rgb(214, 8, 8)" href="#" href=”mailto:ale.difabio93@libero.it”>ale.difabio93@libero.it</a><br>
-                </div>
-                (+39) 3924588449<br>
-                Italy
-              </div>
-            </div>
-          </div>
-       </header>
+    <!-- HOW I'M-->
+    <main> 
+      <section id="About-me">
+        <div class="row">
+         <div class="column" style="background: rgb(239, 223, 223);">
+          <a href="books.html" target="blank"> <img src="img/mondo.png" alt="" /> <p style="color:#000000";> <b> passione mappette e altre iniziative</b> </p>  </a> 
+        </div> 
+         <div class="column" style="background: hsl(115.1, 72%, 36.5%);">
+          <h2>About me</h2>
+          <p> Ritengo di essere una persona ottimista e curiosità, dal 2019 i miei interessi mi hanno portato dapprima ad approcciarmi al mondo del marketing,
+             <br> per poi passare ad una parte più analitica, con l’integrazione ed analisi dati. <br>
+            So raccogliere, collezionare e trovare dati! ed è questo il mio lavoro, <br>
+            analizzo ed interpetro i dati, così da renderli comprensibili per tutti.       
+            </p>
+         </div>
+       </div>
       </section>
 
 
+
+      <!-- FOOTER -->
+      <section id="Contact" class="Contact flex-columns" >
+        <header class="section-footer" >
+          <h3>Contact</h3>
+            <div class="columnfooter">
+              <div class="icon-bar">
+                <a href="https://github.com/AleDifa" style="padding-left:25px;" class="Github" ><i class="fab fa-github fa-3x" style="color:rgb(0, 0, 0)"></i></a>
+                <a href="https://www.instagram.com/alessandro_difa/" style="padding-left:25px;" class="Instagram" ><i class="fab fa-instagram fa-3x" style="color:rgb(221, 42, 123)"></i></a>
+                <a href="https://www.linkedin.com/in/alessandro-di-fabio/" style="padding-left:25px;" class="linkedin"  ><i class="fab fa-linkedin fa-3x" style="color:rgb(0, 119, 171)"></i></a>    
+                <a href="https://alessandro-difa.medium.com/" style="padding-left:25px;" class="Medium"  ><i class="fab fa-medium fa-3x" style="color:rgb(0, 0, 0)"></i></a>    
+                <div class=footer_with_my_name  style='margin-top:15px;'>          
+                  Written by Alessandro Di Fabio <br>
+                  with <i class="fas fa-heart"> </i> and  Html/Css <br>
+                <div>
+                <a style="color:rgb(214, 8, 8)" href="#" href=”mailto:ale.difabio93@libero.it”>ale.difabio93@libero.it</a><br>
+                
+              </div>
+              (+39) 3924588449<br>
+              Italy
+            </div>
+        </header>
+      </section>
     </main>
   </body>
 </html>
