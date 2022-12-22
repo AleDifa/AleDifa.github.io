@@ -181,6 +181,13 @@ border: 1px solid #fff;
 /************RESPONSIVE ****************/
 
 @media  (max-width: 767px) { 
+  .logo  { 
+    display: inline-grid;
+    font-size: 22px;
+  }
+}
+
+@media  (max-width: 767px) { 
   .navbar ul{ 
     display: inline-block;
     top: 147px;
@@ -206,5 +213,7 @@ border: 1px solid #fff;
 
 @media (max-width: 767px) {   /*got in vertical How I'M column*/
   .row {
-    display:inline-block   }
+    display:inherit   }
 }
+
+
