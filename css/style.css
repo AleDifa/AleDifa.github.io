@@ -185,6 +185,8 @@ margin-left: 200px;                      /* Spostamento a destra dell'elemento s
 padding: 35px;
 }
 
+
+
 .sub-title strong {
 display: inline-block;
 position: relative;
@@ -225,74 +227,42 @@ img {
   cursor: pointer;
 }
 
+/*######################### CONTAINER GRID #########################*/
+
 .grid-container {
   display: grid;
-  grid-template:
-  "a b c" auto;
-  column-gap: 10px;
-  row-gap: 10px;
-  max-width: 1200px;
-  margin: 0 auto;
+  grid-template-columns: auto auto  auto;
+  grid-gap: 10px;
 }
-.grid-item {
-  position: relative;
-  text-align: center;
-}
-
-.a {
-  grid-area: a; /* Specifica l'area di griglia per l'elemento A */
-}
-
-.b {
-  grid-area: b; /* Specifica l'area di griglia per l'elemento B */
-}
-
-.c {
-  grid-area: c; /* Specifica l'area di griglia per l'elemento C */
-}
-
-
-
 
 
 .overlay {
   position: absolute;
-  bottom: 0; /* Cambiato da top: 0 */
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 50%; /* Copre solo metà dell'altezza dell'immagine */
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  font-size: 24px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
   display: flex;
-  flex-direction: column; /* Imposta la direzione del flessibile a colonna */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 0; /* Inizialmente rendi l'overlay trasparente */
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
+  z-index: 1; /* Place the overlay on top of the image */
 }
 
-.grid-item:hover .overlay {
-  opacity: 1; /* Quando passi il mouse sopra, rendi l'overlay opaco */
+.item-1, .item-2, .item-3, .overlay {
+  position: relative; /* Ensure the overlay respects the positioning */
 }
 
-
-.grid-item img {
-  width: 100%; /* Fai in modo che l'immagine copra completamente l'elemento */
-  height: 100%;
-  object-fit: cover; /* Riempi completamente l'elemento con l'immagine */
-}
-.grid-item:hover .overlay {
+.item-1:hover .overlay,
+.item-2:hover .overlay,
+.item-3:hover .overlay {
   opacity: 1;
 }
 
-.overlay strong {
-  font-size: 0.8em; /* Imposta la dimensione del carattere più piccola */
-}
-
-.overlay p {
-  font-size: 0.65em; /* Imposta la dimensione del carattere per il paragrafo */
-}
 
 
 
