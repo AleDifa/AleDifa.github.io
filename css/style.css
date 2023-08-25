@@ -120,6 +120,7 @@ ul {
 .portfolio-image {
   width: 50%;
   padding: 100px;
+  
 }
 .profile-info {
   text-align: center;
@@ -134,6 +135,8 @@ ul {
   height: auto;
   display: block;
   margin: 0 auto;
+  width: 460px; /* Adjust this value according to your needs */
+  height: 520px; /* Adjust this value according to your needs */
 }
 
 
@@ -146,22 +149,24 @@ ul {
   margin: 20px 0;             /* Aggiungi margine sopra e sotto */
 }
 
-.highlight-up {
-  display: block;
-  font-size: 2em;                     /* Dimensione del testo ingrandito */
-  color: #888;                     /* Colore grigio chiaro */
-  margin-top: -0.4em;               /*❝ Sposta leggermente in basso */
-  margin-right: 16.4em;            /* ❝ Sposta leggermente in basso */
+.highlight {
+  font-size: 2em;
+  color: #888;
+}
+
+.highlight-container {
+  display: flex;
+  align-items: flex-end; /* Allineamento verticale in basso */
+  justify-content: center;
+  gap: 0.2em;
 }
 
 .highlight-down {
-  display: block;
-  font-size: 2em;               /* Dimensione del testo ingrandito */
-  color: #888;               /* Colore grigio chiaro */
-  margin-top: -0.4em;         /* Sposta leggermente in basso  ❞*/
-  margin-left: 16.4em;       /* Sposta leggermente in basso   ❞*/
+  display: inline-block;
+  top: 0.3em; /* Sposta il carattere in basso regolando questo valore */ 
+  margin-bottom:-1em;
+  margin-left: 0.4em;       /* Sposta leggermente in basso   ❞*/
 }
-
 
 
 
@@ -222,28 +227,34 @@ img {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto ;
-  padding: 10px;
+  grid-template:
+  "a b c" auto;
   column-gap: 10px;
   row-gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
 .grid-item {
-  position: relative; /* Aggiungi questa proprietà per consentire il posizionamento dell'overlay */
-  padding: 0; /* Rimuovi il padding per far sì che l'immagine copra tutto lo spazio */
-  font-size: 0; /* Imposta la dimensione del carattere a 0 per non occupare spazio verticale */
+  position: relative;
   text-align: center;
-  overflow: hidden; /* Nasconde eventuali overflow dell'immagine */
 }
 
-.grid-item-no_project {
-  background-color: transparent; /* Rendi trasparenti le caselle senza nasconderle */
-  border: none; /* Rimuovi il bordo */
-  padding: 20px; /* Mantieni lo spazio vuoto */
-  font-size: 0; /* Imposta la dimensione del carattere a 0 per non occupare spazio verticale */
-  text-align: center;
-  visibility: hidden; /* Nascondi il contenuto senza rimuovere lo spazio */
+.a {
+  grid-area: a; /* Specifica l'area di griglia per l'elemento A */
 }
+
+.b {
+  grid-area: b; /* Specifica l'area di griglia per l'elemento B */
+}
+
+.c {
+  grid-area: c; /* Specifica l'area di griglia per l'elemento C */
+}
+
+
+
+
+
 .overlay {
   position: absolute;
   bottom: 0; /* Cambiato da top: 0 */
