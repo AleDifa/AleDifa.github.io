@@ -6,13 +6,15 @@ body {
 }     
    
 .h1, .h2, .h3, .h4, .h5, .h6, body, h1, h2, h3, h4, h5, h6, html {
-  font-family: Montserrat,sans-serif;
+  font-family: 'Montserrat',sans-serif;
   font-weight: 300;
 }
 
 * {                              /* Rimuove il bordo del browser predefinito */
   margin: 0;                    /* stai dicendo al browser di non aggiungere alcuno spazio tra l'elemento e gli altri elementi circostanti.*/
   box-sizing: border-box;      /* crea distanza tra le sezioni dei progetti, se omesso le mette tutte attaccate */
+ /* border: 1px solid red;  Aggiungi un bordo rosso alla classe .wrapper */
+
 }
 
 
@@ -27,126 +29,119 @@ p {
 }
 
 
-.About-me, .Portfolio, .Contact {
-  margin: 0 200px; /* Distanza dai lati destro e sinistro */
-  }
 
 
+/*######################### MENU/ navbar #########################*/
 
+header {
+  background-color: #333;
+  color: #fff;
+  align-items: center;
+  padding: 10px 20px;
+  justify-content: space-between; /* Aggiunge spazio tra il logo e il menu */
 
-/*######################### MENU/ NAVBAR #########################*/
+}
 
 .menu {
   display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  }
-  
-.menu li {
-  margin-right: 20px;
-  }
-  
-.resume-button a {
-  display: inline-block;
-  padding: 2px;
-  background-color: #2a4e74;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  }
-  
-.resume-button a:hover {
-  background-color: #0056b3;
-  }
-  
-
-/* color of navbar and Scarica qui il mio cv */
-a {
-  text-decoration: none;                          /* remove the underlined under each navbars words */
-  color: rgb(180, 2, 2); 
-}
-ul {
-  list-style: none;                         /* leave a dot insthead a menu page   ex: .project .about me ecc) */
-}
-
-/* Stili per la barra di navigazione */
-.navbar {
-  background:rgba(238, 238, 238, 0.8); /* Cambiato l'opacità del background per renderlo più scuro */
-  position: fixed; /* Aggiunto il posizionamento fisso per far rimanere la barra in cima */
-  top: 0; /* Posiziona la barra in cima alla pagina */
-  left: 0;
-  right: 0;
-  padding: 0 30px;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.nav li {
+  margin-right: 20px;
+  list-style-type: none;
+  display: inline-block;
+  padding-right: 12px;
+}
+
+.nav a {
+  text-decoration: none;
   color: #fff;
-  height: 80px;
-  z-index: 9999; /* Assicura che la barra sia sopra gli altri elementi */
-  transition: background-color 0.3s, opacity 0.3s; /* Aggiunte le transizioni per colore di sfondo e opacità */
-}
+  font-weight: bold;
 
-/* Sottolineatura sottostante */
-.navbar ul li a::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: rgb(158, 44, 44);
-  bottom: 0;
-  left: 0;
-  transform: scaleX(0); /* Inizialmente nascosta */
-  transform-origin: bottom left;
-  transition: transform 0.3s;
-}
-
-.navbar ul li a:hover::after {
-  transform: scaleX(1); /* Mostra la linea sottolineata al passaggio del mouse */
 }
 
 
+/* Stili per il menu hamburger su dispositivi mobili */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
 
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+
+}
+
+/* Stili per dispositivi più piccoli */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none; /* Nascondi i link del menu */
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+  }
+
+  .nav-links.active {
+    display: flex; /* Mostra i link del menu quando è attivo */
+  }
+
+  .hamburger-menu {
+    display: flex; /* Mostra il menu hamburger */
+  }
+}
 
 /*#########################  PARTE UNO ###########################*/
-
-.portfolio-content {
-  display: flex;
-  justify-content: space-between;
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.profile,
-.portfolio-image {
-  width: 50%;
-  padding: 100px;
-  
-}
-.profile-info {
+
+.one{
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-}
-.profile img,
-.portfolio-image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  width: 460px; /* Adjust this value according to your needs */
-  height: 520px; /* Adjust this value according to your needs */
+  margin-top: 100px;
 }
 
+@media screen and (max-width: 700px) {
+    .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-
+  .one {
+    margin-top: 20px; /* Riduci il margine superiore su dispositivi mobili */
+    text-align: center; /* Centra il testo */
+  }
+}
 
 /*#########################  PARTE DUE ###########################*/
 
+
 .frase {
   text-align: center;
-  margin: 20px 0;             /* Aggiungi margine sopra e sotto */
+  margin: 20px 0;
 }
 
 .highlight {
@@ -156,117 +151,120 @@ ul {
 
 .highlight-container {
   display: flex;
-  align-items: flex-end; /* Allineamento verticale in basso */
+  align-items: flex-end;
   justify-content: center;
   gap: 0.2em;
 }
 
 .highlight-down {
   display: inline-block;
-  top: 0.3em; /* Sposta il carattere in basso regolando questo valore */ 
-  margin-bottom:-1em;
-  margin-left: 0.4em;       /* Sposta leggermente in basso   ❞*/
+  top: 0.3em;
+  margin-bottom: -1em;
+  margin-left: 0.4em;
+
 }
 
+/*#########################  PARTE TRE ###########################*/
 
 
-
-
-
-/*######################### PARTE TRE #########################*/
-
-.row{
+.row {
   background-color: #c4d6e2;
 }
 
 .sub-title {
-font-family: Montserrat, sans-serif;      /* Applica lo stesso font alla classe .sub-title */
-margin-left: 200px;                      /* Spostamento a destra dell'elemento sub-title */
-padding: 35px;
+  font-family: Montserrat, sans-serif;
+  margin-left: 200px;
+  margin-right: 200px;
+
+  padding: 35px;
 }
 
-
-
 .sub-title strong {
-display: inline-block;
-position: relative;
+  display: inline-block;
+  position: relative;
 }
 
 .sub-title strong::after {
-content: "";
-position: absolute;
-width: 100%;
-height: 1px;
-background-color: white;
-bottom: -3px;
-left: 0;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  bottom: -3px;
+  left: 0;
 }
 
 
-.margin-container {
-  margin: 0 200px;
+/* Media query per dispositivi con larghezza massima di 768px (tablet e dispositivi mobili) */
+@media screen and (max-width: 768px) {
+  .sub-title {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+  }
+
+  .sub-title strong::after {
+    bottom: -2px;
+  }
 }
 
-/* Stili per le immagini */
+/*#########################  PARTE QUATTRO ###########################*/
+
 img {
-  border-radius: 10%;         /* Applica un bordo arrotondato del 10% all'immagine */
-  max-width: 100%;           /* Imposta la larghezza massima dell'immagine al 100% del suo contenitore */
-  padding: 10px;            /* Aggiunge uno spazio di riempimento di 10px attorno all'immagine */
+  border-radius: 10%;
+  max-width: 100%;
+  padding: 10px;
 }
-
-.scroll-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-}
-
-.scroll-to-top img {
-  width: 60px; /* Adjust the size of the arrow image */
-  height: 60px; /* Adjust the size of the arrow image */
-  cursor: pointer;
-}
-
-/*######################### CONTAINER GRID #########################*/
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto  auto;
+  grid-template-columns: auto auto auto;
   grid-gap: 10px;
 }
 
+.grid-item {
+  position: relative;
+  /* Imposta un'altezza fissa per l'elemento .grid-item (ad esempio 300px) */
+  /* Imposta un'immagine di sfondo per l'elemento .grid-item */
+  background-image: url('img/powerBI.PNG');
+  background-size: cover; /* Adatta l'immagine di sfondo per coprire l'intero elemento */
+  background-position: center center; /* Centra l'immagine di sfondo */
+}
 
 .overlay {
   position: absolute;
-  bottom: 0;
+  bottom: 0; /* Posiziona inizialmente l'overlay all'estremità inferiore dell'elemento .grid-item */
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
   width: 100%;
-  height: 100%;
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.5s ease;
-  z-index: 1; /* Place the overlay on top of the image */
+  height: 20%; /* Copre solo la metà inferiore dell'immagine */
+  background: rgba(0, 0, 0, 0.5); /* Un colore di sfondo semitrasparente per rendere il testo leggibile */
+  color: white; /* Colore del testo */
+  text-align: center; /* Allineamento del testo al centro */
+  opacity: 0; /* L'overlay è inizialmente nascosto */
+  transition: opacity 0.3s, bottom 0.3s; /* Aggiungi una transizione per l'opacità e la posizione inferiore */
+  overflow: hidden; /* Nasconde il contenuto che supera l'altezza iniziale */
+  transform: translateY(-10%); /* Posiziona l'overlay verticalmente al centro */
 }
 
-.item-1, .item-2, .item-3, .overlay {
-  position: relative; /* Ensure the overlay respects the positioning */
-}
 
-.item-1:hover .overlay,
-.item-2:hover .overlay,
-.item-3:hover .overlay {
+
+/* When you mouse over the container, fade in the overlay title */
+.grid-item:hover .overlay {
   opacity: 1;
+  bottom: 0; /* Sposta l'overlay verso l'alto per farlo apparire */
 }
 
+/* Media query per dispositivi con larghezza massima di 768px (tablet e dispositivi mobili) */
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Modifica la griglia per una colonna su schermi più piccoli */
+  }
 
+  .grid-item {
+    margin-bottom: 20px; /* Aggiunge spazio tra gli elementi */
+  }
+}
 
-
-/*######################## FOOTER ########################*/
 
 footer {
   clear: both;
@@ -274,27 +272,41 @@ footer {
   padding: 20px;
   background-color: #f0f0f0;
 }
+
 .footer_with_my_name {
   text-align: center;
   margin-top: 15px;
-  }
-
-  .Contact .sub-title strong::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #99b8cd;
-    bottom: -3px;
-    left: 0;
-    }
-
-.icon-bar {  /* icone nel footer*/
-text-align: center;
-margin-top: 20px; /* Aggiunto spazio sopra l'icon bar */
 }
+
+.Contact .sub-title strong::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #99b8cd;
+  bottom: -3px;
+  left: 0;
+}
+
+.icon-bar {
+  text-align: center;
+  margin-top: 20px;
+}
+
 .icon-bar a {
-display: inline-block;
-margin: 0 10px;
+  display: inline-block;
+  margin: 0 10px;
 }
-      
+
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.scroll-to-top img {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
