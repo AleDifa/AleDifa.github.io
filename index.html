@@ -3,42 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <script href="script.js"></script>
 </head>
 
-<body id="home">
-  <div class="box">
-    <div id="navbar" class="navbar">
-      <h1 class="logo">
-        <a href="index.html">
-          <span class="text-primary"></i> Alessandro </a>
-        </span>Di Fabio
-      </h1>
-      <nav>
-        <ul class="menu">
+<body> 
+  <header>
+    <div class="menu">
+      <div class="logo">
+        <span>Alessandro Di Fabio</span>
+      </div>
+      <nav class="nav">
+        <ul class="nav-links">
           <li><a href="Portfolio.html">PORTFOLIO</a></li>
           <li><a href="#About-me">ABOUT ME</a></li>
           <li><a href="#Contact">CONTACT</a></li>
-          <li class="resume-button"><a href="https://docs.google.com/document/d/1fCEIAwxaMamCI1igqjbiWp9BBTF-IhpFqMxzgL9AJXI/edit" target="_blank">RESUME</a></li>
+          <li><a href="https://docs.google.com/document/d/1fCEIAwxaMamCI1igqjbiWp9BBTF-IhpFqMxzgL9AJXI/edit">RESUME</a></li>
+
         </ul>
+        <div class="hamburger-menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
       </nav>
     </div>
-  </div>
+  </header>
+
+<!--serve per crare il menu ad hamburger in modalità mobile-->
+<script>const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const navLinks = document.querySelector('.nav-links');
+  
+  hamburgerMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active'); // Aggiunge o rimuove la classe 'active'
+  });
+</script>
+<br>
+<br>
+<br>
   <!-- PARTE UNO -->
-  <div class="portfolio-content">
-    <div class="profile">
-      <div class="profile-info">
-        <h2>Data analyst | Data Engineer </h2>
-        <p> </p>
-      </div>
+  <div class="wrapper">
+    <div class="one">
+      <h2>Data analyst | Data Engineer </h2>
     </div>
-    <div class="portfolio-image">
-      <a href="Portfolio.html" target="_blank" >
-        <img src="img/7f6e7260586a6c07892025a0c7da3fc7.gif" alt="Immagine del portafoglio">
-      </a>
-    </div>
+    <div>
+      <a href="Portfolio.html"> 
+      <img src="img/7f6e7260586a6c07892025a0c7da3fc7.gif"></div></a>
   </div>
+
   <!-- PARTE DUE -->
   <div class="frase" id="About-me">
     <p class="highlight-container">
@@ -47,7 +61,7 @@
       <span class="highlight highlight-down">❞</span>
     </p>
   </div>
-  
+
   <br>
   <!-- PARTE TRE -->
   <div class="row"> 
@@ -73,52 +87,39 @@
       </div> <!--sub-title-->
     </div> <!--About-me-->
   </div> <!--row-->
-  
+
+  <!-- PARTE QUATTRO-->
   <div class="row" style="background-color: #99b8cd"> 
-    <div class="About-me" >
+    <div class="Projects" >
       <div class="sub-title">
         <strong>PORTFOLIO</strong>
         <p>Welcome to my portfolio. Here you can find some of the projects I have worked on.</p>
         <br>
         <div class="grid-container">
-          <div class="item-1">
             <a href="https://github.com/AleDifa/POWER-BI-dashboard/blob/main/PW%20dashboard%20sales.pdf">
               <div class="grid-item">
                 <img src="img/powerBI.PNG" alt="Project 1" />
-                <div class="overlay">
-                  <strong>Dashboard</strong>
-                  <br>
-                  <p>Power BI project Sales Dashboard</p>
-                </div>
+                <div class="overlay">Power BI project Sales Dashboard</div>
               </div>
             </a>
-          </div>
-          <div class="item-3">
             <a href="https://github.com/AleDifa/Marketing-Analytics-Trends">
               <div class="grid-item">
                 <img src="img/trend.png" alt="Project 1" />
-                <div class="overlay">
-                  <strong>Web Development</strong>
-                  <br>
-                  <p>with web scraping technique we create a SaS that can predict market trends</p>
-                </div>
+                <div class="overlay">With web scraping tecnique we create a trends analysis for marketing department </div>
               </div>
             </a>
-          </div>
         </div> <!-- grid container -->
       </div> <!-- sub title -->
     </div> <!-- About me -->
   </div> <!-- row -->
 
-
-  
     <!-- FOOTER -->
-  <div class="icon-bar" id="Contact">
+    <div class="icon-bar" id="Contact">
       <a href="https://github.com/AleDifa" class="Github"><i class="fab fa-github fa-3x" style="color:rgb(0, 0, 0)"></i></a>
       <a href="https://www.instagram.com/alessandro_difa/" class="Instagram"><i class="fab fa-instagram fa-3x" style="color:rgb(221, 42, 123)"></i></a>
       <a href="https://www.linkedin.com/in/alessandro-di-fabio/" class="linkedin"><i class="fab fa-linkedin fa-3x" style="color:rgb(0, 119, 171)"></i></a>
       <a href="https://alessandro-difa.medium.com/" class="Medium"><i class="fab fa-medium fa-3x" style="color:rgb(0, 0, 0)"></i></a>
-  </div>
+    </div>
   <div class="footer_with_my_name" style="margin-top:15px;">
           Written by Alessandro Di Fabio<br>
           with <i class="fas fa-heart"></i> and Html/Css<br>
