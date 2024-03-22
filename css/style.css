@@ -310,3 +310,7 @@ footer {
   height: 60px;
   cursor: pointer;
 }
+
+.hover-link-red:hover {
+  color: red;
+}
