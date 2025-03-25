@@ -41,10 +41,18 @@ header {
   justify-content: space-between; /* Aggiunge spazio tra il logo e il menu */
 
 }
+.description {
+  margin-top: 8px;
+  font-size: 16px;
+}
 
 .menu {
   display: flex;
   align-items: center;
+}
+
+.grid-item {
+  text-align: center;
 }
 
 .logo {
@@ -222,14 +230,7 @@ img {
   grid-gap: 10px;
 }
 
-.grid-item {
-  position: relative;
-  /* Imposta un'altezza fissa per l'elemento .grid-item (ad esempio 300px) */
-  /* Imposta un'immagine di sfondo per l'elemento .grid-item */
-  background-image: url('img/powerBI.PNG');
-  background-size: cover; /* Adatta l'immagine di sfondo per coprire l'intero elemento */
-  background-position: center center; /* Centra l'immagine di sfondo */
-}
+
 
 .overlay {
   position: absolute;
@@ -248,11 +249,12 @@ img {
 
 
 
-/* When you mouse over the container, fade in the overlay title */
+/* When you mouse over the container, fade in the overlay title 
 .grid-item:hover .overlay {
   opacity: 1;
-  bottom: 0; /* Sposta l'overlay verso l'alto per farlo apparire */
-}
+  bottom: 0; } Sposta l'overlay verso l'alto per farlo apparire */
+
+
 
 /* Media query per dispositivi con larghezza massima di 768px (tablet e dispositivi mobili) */
 @media screen and (max-width: 768px) {
