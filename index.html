@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alessandro Difa Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            position: absolute;
+            right: 0;
+            top: -3px;
+        }
+
+        .showcase {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .video-container {
+            background-color: #212121;
+            padding: 15px;
+            border-radius: 5px;
+            position: relative;
+            width: 40%;
+            color: #000000;
+        }
+
+        .video-title {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #e0e0e0;
+        }
+
+        .video-frame {
+            width: 100%;
+            height: 300px;
+            background-color: #333;
+            margin-bottom: 10px;
+            position: relative;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .control {
+            width: 30px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: white;
+        }
+
+        .slider-container {
+            width: 80.2%; /* Same width as the two video containers together plus gap */
+            margin-left: auto;
+            background-color: #212121;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .slider-group {
+            margin-bottom: 15px;
+        }
+
+        .slider-label {
+            display: block;
+            margin-bottom: 8px;
+            color: #e0e0e0;
+            font-size: 14px;
+        }
+
+        .slider {
+            width: 100%;
+            height: 6px;
+            background-color: #333;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .slider-fill {
+            position: absolute;
+            height: 100%;
+            background-color: #2196F3;
+            border-radius: 3px;
+        }
+
+        .slider-handle {
+            width: 16px;
+            height: 16px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            position: absolute;
+            top: -5px;
+            cursor: pointer;
+        }
+
+        .info-section {
+            display: flex;
+            margin-bottom: 60px;
+        }
+
+        .info-box {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+        }
+
+        .info-content h3 {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-bottom: 5px;
+        }
+
+        .info-content p {
+            font-size: 0.9rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .project-card.instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            border-radius: 15px;
+            aspect-ratio: 1 / 1;
+        }
+
+    
+    .project-card.firstfloor {
+            background-color: #4169E1;
+            border-radius: 15px;
+            aspect-ratio: 1 / 0.6; } /* Make it longer */
+        
+
+
+        .project-card.coffeehub {
+            background-color: #00BFFF; /* Light blue instead of regular blue */
+            border-radius: 15px;
+            aspect-ratio: 1 / 0.6; /* Make it longer */
+        }
+
+        .project-card.curve {
+            background-color: #FFD700;
+            border-radius: 15px;
+            aspect-ratio: 1 / 1;
+        }
+
+        .project-details {
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .project-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .project-description {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            max-width: 90%;
+        }
+
+        .cta-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        /* Canvas for dot transformation */
+        canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Animated dots in transformed video */
+        .dots-container {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            position: relative;
+        }
+
+        .dot-pixel {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background-color: white;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .showcase {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+            
+            .video-container {
+                width: 80%;
+            }
+            
+            .slider-container {
+                width: 80%;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Alessandro Difa</h1>
+        <div class="dot"></div>
+    </div>
+
+    <div class="showcase">
+        <div class="video-container">
+            <div class="video-title"></div>
+            <div class="video-frame">
+                <div class="video-controls">
+                    <div class="control" id="playPauseBtn">⏸</div>
+                </div>
+                <video id="originalVideo" width="100%" height="100%" autoplay loop muted playsinline>
+                    <source src="./assets/video-dal-backend.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <!--transformedVideo-->
+        <div class="video-container">
+            <div class="video-title"></div>
+            <div class="video-frame">
+                <div class="video-controls">
+                    <div class="control" id="playPauseBtn2">⏸</div>
+                </div>
+                <div id="transformedVideo" class="dots-container">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-container">
+        <div class="slider-group">
+            <label class="slider-label">Dot Size</label>
+            <div class="slider">
+                <div class="slider-fill" style="width: 20%"></div>
+                <div class="slider-handle" style="left: 20%"></div>
+            </div>
+        </div>
+        
+        <div class="slider-group">
+            <label class="slider-label">Dot Density</label>
+            <div class="slider">
+                <div class="slider-fill" style="width: 90%"></div>
+                <div class="slider-handle" style="left: 90%"></div>
+            </div>
+        </div>
+        
+        <div class="slider-group">
+            <label class="slider-label">Brightness</label>
+            <div class="slider">
+                <div class="slider-fill" style="width: 55%"></div>
+                <div class="slider-handle" style="left: 55%"></div>
+            </div>
+        </div>
+        
+        <div class="slider-group">
+            <label class="slider-label">Contrast</label>
+            <div class="slider">
+                <div class="slider-fill" style="width: 70%"></div>
+                <div class="slider-handle" style="left: 70%"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="info-box">
+            <div class="icon">💼</div>
+            <div class="info-content">
+                <h3>Recent Experience</h3>
+                <p>Business Analyst IT and Scrum Master</p>
+            </div>
+        </div>
+        <div class="info-box">
+            <div class="icon">📍</div>
+            <div class="info-content">
+                <h3>Location</h3>
+                <p>Italy, +39 3924588449</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="projects-grid">
+        <div>
+            <div class="project-card instagram">
+                <img src="./assets/BA.png" alt="Avatar" style="width:100%">
+                <a href="https://docs.google.com/document/d/1UFYxt9-sYxSKnW4T452HbH9N3mFPGvcqCLgYvb-UqWU/edit?usp=sharing" target="_blank"></a>
+            </div>
+            <div class="project-details">
+                <div class="project-title">End to End Business Analyst Project</div>
+                <div class="project-description">...</div>
+            </div>
+        </div>
+        
+        <div>
+            <div class="project-card firstfloor">
+                <img src="./assets/merlino.png" alt="Avatar" style="width:100%">
+                <a href="https://github.com/AleDifa/create-table-automatically-on-pgAdmin/blob/main/create%20database%20on%20pgadmin.ipynb" target="_blank"></a>
+            </div>
+            <div class="project-details">
+                <div class="project-title">Automatically convert an Excel file into a database table</div>
+                <div class="project-description">...</div>
+            </div>
+        </div>
+
+        <div>
+            <div class="project-card coffeehub">
+                <a href="" target="_blank"></a>
+            </div>
+            <div class="project-details">
+                <div class="project-title">yes, just a sky blu rectangle</div>
+                <div class="project-description">...</div>
+            </div>
+        </div>
+        
+        <div>
+            <div class="project-card curve">
+                <img src="./assets/SM.png" alt="Avatar" style="width:100%">
+                <a href="https://docs.google.com/document/d/1lqNd_Yha1q_HObBZ9HuCx9Tk-HdXEvDTF0eljmboaxc/edit?usp=sharing" target="_blank"></a>
+            </div>
+            <div class="project-details">
+                <div class="project-title">a Scrum Agile Introduction</div>
+                <div class="project-description">...</div>
+            </div>
+        </div>
+    </div>            
+
+    
+    <footer style="display: flex; justify-content: center; align-items: center; height: 100px; background-color: #121212;">
+        <a href="https://www.linkedin.com/in/alessandro-difa/" class="linkedin" style="margin: 0 15px;">
+            <i class="fab fa-linkedin fa-3x" style="color: rgb(0, 119, 171);"></i>
+        </a>
+        <a href="https://alessandro-difa.medium.com/" class="Medium" style="margin: 0 15px;">
+            <i class="fab fa-medium fa-3x" style="color: rgb(0, 0, 0);"></i>
+        </a>
+    </footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script>
+        // Video processing: converting original video to dots
+        document.addEventListener('DOMContentLoaded', function() {
+            const originalVideo = document.getElementById('originalVideo');
+            const dotsContainer = document.getElementById('transformedVideo');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const playPauseBtn2 = document.getElementById('playPauseBtn2');
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Video playback state
+            let isPlaying = true;
+            
+            // Play/Pause control
+            playPauseBtn.addEventListener('click', togglePlayPause);
+            playPauseBtn2.addEventListener('click', togglePlayPause);
+            
+            function togglePlayPause() {
+                if (isPlaying) {
+                    originalVideo.pause();
+                    playPauseBtn.innerHTML = '▶';
+                    playPauseBtn2.innerHTML = '▶';
+                    isPlaying = false;
+                } else {
+                    originalVideo.play();
+                    playPauseBtn.innerHTML = '⏸';
+                    playPauseBtn2.innerHTML = '⏸';
+                    isPlaying = true;
+                }
+            }
+            
+            // Create dot grid based on video dimensions
+            let dotGrid = [];
+            let videoLoaded = false;
+            
+            // Wait for video metadata to load to get dimensions
+            originalVideo.addEventListener('loadedmetadata', function() {
+                canvas.width = originalVideo.videoWidth;
+                canvas.height = originalVideo.videoHeight;
+                setupDotGrid();
+                videoLoaded = true;
+                
+                // Start the animation loop once video is loaded
+                requestAnimationFrame(processFrame);
+            });
+            
+            // Ensure video starts playing
+            originalVideo.addEventListener('canplaythrough', function() {
+                originalVideo.play().catch(e => console.error("Video playback failed:", e));
+            });
+            
+            function setupDotGrid() {
+                // Clear dots container
+                dotsContainer.innerHTML = '';
+                
+                // Calculate number of dots based on container size
+                const dotSize = parseInt(getDotSize());
+                const spacing = dotSize * 1.5;
+                
+                const containerWidth = dotsContainer.offsetWidth;
+                const containerHeight = dotsContainer.offsetHeight;
+                
+                const cols = Math.floor(containerWidth / spacing);
+                const rows = Math.floor(containerHeight / spacing);
+                
+                // Create grid of dots
+                for (let y = 0; y < rows; y++) {
+                    const rowDots = [];
+                    for (let x = 0; x < cols; x++) {
+                        const dot = document.createElement('div');
+                        dot.className = 'dot-pixel';
+                        dot.style.width = dotSize + 'px';
+                        dot.style.height = dotSize + 'px';
+                        dot.style.position = 'absolute';
+                        dot.style.left = (x * spacing) + 'px';
+                        dot.style.top = (y * spacing) + 'px';
+                        dot.style.opacity = '0';
+                        
+                        dotsContainer.appendChild(dot);
+                        rowDots.push(dot);
+                    }
+                    dotGrid.push(rowDots);
+                }
+            }
+            
+            function getDotSize() {
+                const dotSizeSlider = document.querySelectorAll('.slider')[0];
+                const dotSizeHandle = dotSizeSlider.querySelector('.slider-handle');
+                const percentage = parseFloat(dotSizeHandle.style.left) || 40;
+                return 2 + (percentage / 100) * 6;
+            }
+            
+            function getDensity() {
+                const densitySlider = document.querySelectorAll('.slider')[1];
+                const densityHandle = densitySlider.querySelector('.slider-handle');
+                const percentage = parseFloat(densityHandle.style.left) || 65;
+                return percentage / 100;
+            }
+            
+            function getBrightness() {
+                const brightnessSlider = document.querySelectorAll('.slider')[2];
+                const brightnessHandle = brightnessSlider.querySelector('.slider-handle');
+                const percentage = parseFloat(brightnessHandle.style.left) || 55;
+                return percentage / 100;
+            }
+            
+            function getContrast() {
+                const contrastSlider = document.querySelectorAll('.slider')[3];
+                const contrastHandle = contrastSlider.querySelector('.slider-handle');
+                const percentage = parseFloat(contrastHandle.style.left) || 70;
+                return 0.5 + percentage / 100;
+            }
+            
+            function processFrame() {
+                if (videoLoaded && !originalVideo.paused && !originalVideo.ended) {
+                    // Draw current video frame to canvas
+                    ctx.drawImage(originalVideo, 0, 0, canvas.width, canvas.height);
+                    
+                    // Get image data from canvas
+                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    const data = imageData.data;
+                    
+                    // Sample pixels and update dot opacities
+                    const brightness = getBrightness();
+                    const contrast = getContrast();
+                    const density = getDensity();
+                    
+                    // Adjust the sampling rate based on video and grid dimensions
+                    const samplingRateX = canvas.width / dotGrid[0].length;
+                    const samplingRateY = canvas.height / dotGrid.length;
+                    
+                    for (let y = 0; y < dotGrid.length; y++) {
+                        for (let x = 0; x < dotGrid[y].length; x++) {
+                            // Sample pixel from original video
+                            const pixelX = Math.floor(x * samplingRateX);
+                            const pixelY = Math.floor(y * samplingRateY);
+                            
+                            if (pixelX < canvas.width && pixelY < canvas.height) {
+                                const pixelIndex = (pixelY * canvas.width + pixelX) * 4;
+                                
+                                // Calculate brightness of pixel (average of RGB)
+                                const r = data[pixelIndex];
+                                const g = data[pixelIndex + 1];
+                                const b = data[pixelIndex + 2];
+                                
+                                // Convert to grayscale
+                                let gray = (r + g + b) / 3;
+                                
+                                // Apply contrast and brightness adjustments
+                                gray = ((gray / 255 - 0.5) * contrast + 0.5) * 255;
+                                gray = gray * brightness;
+                                gray = Math.max(0, Math.min(255, gray));
+                                
+                                // Apply density threshold
+                                if (Math.random() < density) {
+                                    // Set dot opacity based on pixel brightness
+                                    dotGrid[y][x].style.opacity = (gray / 255).toFixed(2);
+                                } else {
+                                    dotGrid[y][x].style.opacity = '0';
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                // Continue the animation loop
+                requestAnimationFrame(processFrame);
+            }
+
+            // Update dot size when slider changes
+            const sliders = document.querySelectorAll('.slider');
+            sliders.forEach((slider, index) => {
+                const handle = slider.querySelector('.slider-handle');
+                const fill = slider.querySelector('.slider-fill');
+                
+                slider.addEventListener('click', function(e) {
+                    const sliderRect = slider.getBoundingClientRect();
+                    const position = (e.clientX - sliderRect.left) / sliderRect.width;
+                    const percentage = Math.max(0, Math.min(1, position)) * 100;
+                    
+                    handle.style.left = percentage + '%';
+                    fill.style.width = percentage + '%';
+                    
+                    // If dot size slider changed, update dot sizes
+                    if (index === 0) {
+                        const dotSize = getDotSize();
+                        const dots = document.querySelectorAll('.dot-pixel');
+                        dots.forEach(dot => {
+                            dot.style.width = dotSize + 'px';
+                            dot.style.height = dotSize + 'px';
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
