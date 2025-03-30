@@ -1,5 +1,5 @@
 My website, where I share my projects work. <br>
-Created how the old school teaches, with HTML, Css and ❤️
+❤️
 
 link: https://aledifa.github.io/
 
