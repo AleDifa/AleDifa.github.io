@@ -1,8 +1,10 @@
-My website, where I share my projects work. <br>
+My website, where I share some my progress. <br>
 ❤️
 
-link: https://aledifa.github.io/
+link: https://aledifa.github.io/  Alessandro Di Fabio
 
 If you like you can copy!
 
-AleDifa.github.io
+Made by Claude crate with multiple prompts 
+
+
