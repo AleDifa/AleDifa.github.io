@@ -256,7 +256,7 @@ export default function PortfolioCostellazione() {
           {/* Profile Image */}
           <div className="relative w-48 h-48 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-purple-400 shadow-2xl flex-shrink-0">
             <img 
-              src="src/merlino-honolulu.gif" 
+              src="/merlino-honolulu.gif"
               alt="Profile" 
               className="w-full h-full object-cover"
             />

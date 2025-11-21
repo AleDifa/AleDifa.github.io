@@ -2,12 +2,12 @@
   "name": "alessandro-di-portfolio",
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://AleDifa.github.io",  
+  "homepage": "https://aledifa.github.io/",
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "predeploy": "npm run build",       
-    "deploy": "gh-pages -d dist" 
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.2.0",
