@@ -8,6 +8,7 @@ export default function PortfolioCostellazione() {
   const [backgroundStars, setBackgroundStars] = useState([]);
   const particlesRef = useRef([]);
   const animationRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   const experiences = [
     { 
@@ -16,13 +17,16 @@ export default function PortfolioCostellazione() {
       period: "2020 - 2022",
       top: 20,
       left: 35,
+      leftMobile: 20,
     },
-        { 
+    { 
       id: 2, 
       title: "Business analyst", 
       period: "2021 - 2023",
       top: 40,
       left: 45,
+      leftMobile: 70,
+      tooltipLeft: true,
       description: "Bridge between business and technology"
     },
     { 
@@ -31,16 +35,18 @@ export default function PortfolioCostellazione() {
       period: "2023",
       top: 55,
       left: 65,
+      leftMobile: 30,
       description: "Certification"
     },
     { 
       id: 4, 
       title: "Scrum Matser", 
       period: "2024 - 2025",
-      top: 60,
+      top: 75,
       left: 35, 
+      leftMobile: 70,
+      tooltipLeft: true,
       description: "Manage 2 teams, Agile ceremonies, backlog refinement, improvement learned"
-
     },
   ];
 
@@ -73,6 +79,17 @@ export default function PortfolioCostellazione() {
       link: "https://alessandro-difa.medium.com/capire-gli-alberi-decisionali-per-la-classificazione-python-d51b8ca0d6a4"
     }
   ];
+
+  // Check if mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Particle system
   useEffect(() => {
@@ -264,8 +281,9 @@ export default function PortfolioCostellazione() {
 
           {/* Bio */}
           <div className="max-w-xl text-center md:text-left px-4">
-            <h1 className="text-4xl md:text-6xl font-bold mb-2">Alessandro Di Fabio</h1>
-            <h2 className="text-xl md:text-2xl text-purple-300 mb-4 md:mb-6">Scrum Master | Business Analyst </h2>
+            <h1 className="text-4xl md:text-6xl font-bold mb-2">Alessandro</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-2">Di Fabio</h1>
+            <h2 className="text-xl md:text-2xl text-purple-300 mb-4 md:mb-6">Scrum Master | Business Analyst</h2>
             <p className="text-base md:text-lg leading-relaxed text-purple-100">
               Certified Scrum Master (PSM I) with a strong background in delivering complex IT, 
               cloud and data transformation projects. I have experience in international corporate and startup.
@@ -279,8 +297,8 @@ export default function PortfolioCostellazione() {
       {/* Professional Experience */}
       <section 
         ref={constellationRef}
-        className="relative py-32 bg-black"
-        style={{ minHeight: '200vh' }}
+      className="relative py-16 md:py-32 bg-black"
+      style={{ minHeight: '150vh'}}
       >
         {/* Particle Canvas */}
         <canvas
@@ -292,9 +310,9 @@ export default function PortfolioCostellazione() {
           }}
         />
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-8 sticky top-8">
-            Professional Experience
+    <div className="container mx-auto px-4 md:px-8 relative z-10" style={{ marginBottom: '100%' }}>        
+    <h2 className="text-3xl md:text-5xl font-bold text-center mb-20 md:mb-32 sticky top-8">          
+          Professional Experience
           </h2>
         </div>
 
@@ -306,12 +324,15 @@ export default function PortfolioCostellazione() {
                 return null;
               }
               const prev = experiences[index - 1];
+              const prevLeft = isMobile ? (prev.leftMobile || prev.left) : prev.left;
+              const currLeft = isMobile ? (exp.leftMobile || exp.left) : exp.left;
+              
               return (
                 <line
                   key={`line-${exp.id}`}
-                  x1={`${prev.left}%`}
+                  x1={`${prevLeft}%`}
                   y1={`${prev.top}%`}
-                  x2={`${exp.left}%`}
+                  x2={`${currLeft}%`}
                   y2={`${exp.top}%`}
                   stroke="rgba(168, 85, 247, 0.4)"
                   strokeWidth="2"
@@ -321,42 +342,46 @@ export default function PortfolioCostellazione() {
             })}
           </svg>
 
-          {experiences.map((exp) => (
-            <div
-              key={exp.id}
-              className="absolute transition-all duration-1000"
-              style={{
-                top: `${exp.top}%`,
-                left: `${exp.left}%`,
-                transform: 'translate(-50%, -50%)',
-                zIndex: 10
-              }}
-            >
+          {experiences.map((exp) => {
+            const starLeft = isMobile ? (exp.leftMobile || exp.left) : exp.left;
+            
+            return (
               <div
-                className={`w-16 h-16 md:w-20 md:h-20 rounded-full transition-all duration-1000 ${
-                  activeStars.includes(exp.id)
-                    ? 'scale-100 opacity-100'
-                    : 'scale-0 opacity-0'
-                }`}
+                key={exp.id}
+                className="absolute transition-all duration-1000"
                 style={{
-                  background: 'radial-gradient(circle, #a78bfa 0%, #7c3aed 60%, transparent 100%)',
-                  boxShadow: activeStars.includes(exp.id) ? '0 0 30px #a78bfa' : 'none'
+                  top: `${exp.top}%`,
+                  left: `${starLeft}%`,
+                  transform: 'translate(-50%, -50%)',
+                  zIndex: 10
                 }}
-              />
-
-              <div
-                className={`absolute left-20 md:left-24 top-1/2 -translate-y-1/2 bg-purple-900/90 backdrop-blur-sm px-4 py-3 md:px-6 md:py-4 rounded-lg border border-purple-400 transition-all duration-1000 w-48 md:w-56 ${
-                  activeStars.includes(exp.id)
-                    ? 'opacity-100 translate-x-0'
-                    : 'opacity-0 -translate-x-4'
-                }`}
               >
-                <div className="text-xs md:text-sm text-purple-300">{exp.period}</div>
-                <div className="font-bold text-base md:text-xl">{exp.company} · {exp.title}</div>
-                <div className="text-xs md:text-sm text-purple-200 mt-1">{exp.description}</div>
+                <div
+                  className={`w-16 h-16 md:w-20 md:h-20 rounded-full transition-all duration-1000 ${
+                    activeStars.includes(exp.id)
+                      ? 'scale-100 opacity-100'
+                      : 'scale-0 opacity-0'
+                  }`}
+                  style={{
+                    background: 'radial-gradient(circle, #a78bfa 0%, #7c3aed 60%, transparent 100%)',
+                    boxShadow: activeStars.includes(exp.id) ? '0 0 30px #a78bfa' : 'none'
+                  }}
+                />
+
+                <div
+                  className={`absolute ${exp.tooltipLeft ? 'right-20 md:left-24' : 'left-20 md:left-24'} top-1/2 -translate-y-1/2 bg-purple-900/90 backdrop-blur-sm px-4 py-3 md:px-6 md:py-4 rounded-lg border border-purple-400 transition-all duration-1000 w-48 md:w-56 ${
+                    activeStars.includes(exp.id)
+                      ? 'opacity-100 translate-x-0'
+                      : `opacity-0 ${exp.tooltipLeft ? 'translate-x-4 md:-translate-x-4' : '-translate-x-4'}`
+                  }`}
+                >
+                  <div className="text-xs md:text-sm text-purple-300">{exp.period}</div>
+                  <div className="font-bold text-base md:text-xl">{exp.title}</div>
+                  <div className="text-xs md:text-sm text-purple-200 mt-1">{exp.description}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
