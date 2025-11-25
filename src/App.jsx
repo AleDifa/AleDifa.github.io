@@ -40,7 +40,7 @@ export default function PortfolioCostellazione() {
     },
     { 
       id: 4, 
-      title: "Scrum Matser", 
+      title: "Scrum Matser / Business analyst", 
       period: "2024 - 2025",
       top: 75,
       left: 35, 
@@ -285,7 +285,7 @@ export default function PortfolioCostellazione() {
             <h1 className="text-4xl md:text-6xl font-bold mb-2">Di Fabio</h1>
             <h2 className="text-xl md:text-2xl text-purple-300 mb-4 md:mb-6">Scrum Master | Business Analyst</h2>
             <p className="text-base md:text-lg leading-relaxed text-purple-100">
-              Certified Scrum Master (PSM I) with a strong background in delivering complex IT, 
+              Certified Scrum Master (PSM I) with a background in delivering complex IT, 
               cloud and data transformation projects. I have experience in international corporate and startup.
               Skilled in data, agile frameworks (Scrum and Kanban), refine requirements gathering, backlog management. 
               I think that good management of work methodologies can increase productivity and create a more sustainable work environment.
